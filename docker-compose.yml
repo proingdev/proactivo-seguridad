@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  proactivo-seguridad-db:
+    ports:
+      - '3306:3306'
+    image: docker.io/bitnami/mariadb:10.6
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=no
+      - MARIADB_ROOT_PASSWORD=dmr*YSMP2013
+      - MARIADB_USER=administrator
+      - MARIADB_DATABASE=proactivo-seguridad
+      - MARIADB_PASSWORD=dmr*YSMP2013
+  proactivo-seguridad:
+    image: docker.io/bitnami/laravel:10
+    ports:
+      - '8000:8000'
+      - '8001:8001'
+    environment:
+      - DB_HOST=proactivo-seguridad-db
+      - DB_PORT=3306
+      - DB_USERNAME=administrator
+      - DB_DATABASE=proactivo-seguridad
+      - DB_PASSWORD=dmr*YSMP2013
+    volumes:
+      - '/home/dmuelas/Projects/proactivo-seguridad/control-accesos:/app'
+    depends_on:
+      - proactivo-seguridad-db
