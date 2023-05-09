@@ -24,7 +24,7 @@
         <!-- Image -->
         <div class="col-6 image-login">
             <div class="app-title">
-        
+
             </div>
         </div>
 
@@ -35,12 +35,22 @@
                 <img src="{{ asset('images/prochem.png') }}" alt="" srcset="">
                 @csrf
 
+                @if(count($errors) > 0)
+
+                @foreach( $errors->all() as $message )
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <span>{{ $message }}</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endforeach
+                @endif
+
                 <div class="mb-3">
-                    <label for="email" class="form-label fw-bold">{{ __('Nombre de usuario:') }}</label>
+                    <label for="username" class="form-label fw-bold">{{ __('Nombre de usuario:') }}</label>
 
                     <div class="">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
+                            name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ __('El nombre de usuario es requerido') }}</strong>
