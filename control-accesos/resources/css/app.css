@@ -222,7 +222,7 @@ h6 {
 }
 
 .card-title {
-    padding: 20px 0 15px 0;
+    margin-bottom: 8px;
     font-size: 18px;
     font-weight: 500;
     color: #012970;
@@ -754,13 +754,49 @@ h6 {
 /*--------------------------------------------------------------
   # Dashboard
   --------------------------------------------------------------*/
+.dashboard .info-card h6 {
+    font-size: 24px;
+}
+
+.dashboard .info-card h6 span {
+    font-size: 16px;
+}
+
+.info-card-body {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .card-icon {
+    font-size: 30px;
+    line-height: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.dashboard .sales-card .card-icon {
+    color: #4154f1;
+    background: #f6f6fe;
+}
+
+.dashboard .revenue-card .card-icon {
+    color: #2eca6a;
+    background: #e0f8e9;
+}
+
+.dashboard .customers-card .card-icon {
+    color: #ff771d;
+    background: #ffecdf;
+}
+
+
 .card-summary {
-    height: 350px;
+    height: 500px;
     overflow-y: scroll;
 }
 
 .dashboard .card-main {
-    height: 730px;
+    height: 500px;
     overflow-y: scroll;
 }
 
@@ -886,7 +922,33 @@ h6 {
     color: #856404;
 }
 
+/*----------------------------------
+ # Visitors card
+*-----------------------------------*/
+.visitor-card .card-visitor-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
 
+.visitor-card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visitor-card img {
+    text-align: center;
+    width: 80px;
+    border-radius: 10px;
+}
+
+.btn-visitor-out {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /*--------------------------------------------------------------
   # Profie Page

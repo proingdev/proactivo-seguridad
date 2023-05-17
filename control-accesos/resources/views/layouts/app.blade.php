@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> @yield('title') </title>
 
     <!-- Favicons -->
     <link href="" rel="icon">
@@ -298,10 +298,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            &copy; Copyright <strong><span>Protecnica Ingenieria</span></strong>. All Rights Reserved
         </div>
     </footer><!-- End Footer -->
 
