@@ -18,6 +18,7 @@ modalUpdateArea.addEventListener('show.bs.modal', function(event) {
     let inputAreaName = modalUpdateArea.querySelector('#name');
     let selectCompany = modalUpdateArea.querySelector('#company_id');
 
+    
     selectCompany[0].value = companyId;
     selectCompany[0].innerText = companyName;
 
