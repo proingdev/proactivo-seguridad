@@ -259,35 +259,69 @@
 
             <li class="nav-item">
                 <a class="nav-link " href=" {{ route('home') }} ">
-                    <i class="bi bi-house-fill"></i>
+                    <i class="bi bi-house"></i>
                     <span>Inicio</span>
                 </a>
             </li><!-- End Dashboard Nav -->
+            <li class="nav-heading">COntrol de accesos</li>
 
+            <!-- Colaborators -->
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Components</span><i
+                <a class="nav-link collapsed" data-bs-target="#colaborators-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-person"></i><span> {{ __('Colaboradores') }} </span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="colaborators-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="components-alerts.html">
-                            <i class="bi bi-circle"></i><span>Alerts</span>
+                        <a href="#">
+                            <span>Ver colaboradores</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Colaborators Colaboradores -->
+
+            <!-- visitors -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#visitors-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span> {{ __('Visitantes') }} </span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="visitors-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="#">
+                            <span>Ver visitantes</span>
                         </a>
                     </li>
 
                 </ul>
-            </li><!-- End Components Nav -->
+            </li>
+            <!-- End visitors Colaboradores -->
 
+            <li class="nav-heading">Permisos</li>
 
-            <li class="nav-heading">Pages</li>
-
+            <!-- permissions -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
-                    <i class="bi bi-person"></i>
-                    <span>Profile</span>
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-person-check"></i>
+                    <span>Permisos</span>
                 </a>
-            </li><!-- End Profile Page Nav -->
+            </li>
+            <!-- End permissions -->
+
+            <li class="nav-heading">Autorizaciones</li>
+
+
+            <!-- autorizations -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-building-add"></i>
+                    <span>Autorizaciones</span>
+                </a>
+            </li>
+            <!-- End autorizations -->
+
+
         </ul>
 
     </aside><!-- End Sidebar-->
