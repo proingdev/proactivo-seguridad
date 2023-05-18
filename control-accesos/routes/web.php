@@ -27,6 +27,10 @@ Route::resource('configuration', 'App\Http\Controllers\AccessControl\Configurati
 /**
  * Configuration
  */
+
 //Companies
 Route::resource('empresas', 'App\Http\Controllers\AccessControl\CompanyController')
     ->middleware('auth');
+
+//Areas
+Route::resource('areas', 'App\Http\Controllers\AccessControl\AreaController');
