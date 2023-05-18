@@ -82,7 +82,7 @@
             </div><!-- End Autorizations Card -->
 
             <!-- Customers Card -->
-            <div class="col-xxl-3 col-xl-12">
+            <div class="col-xxl-3 col-md-6">
 
                 <div class="card info-card customers-card">
 
@@ -104,7 +104,7 @@
         </div>
         <!--  -->
         <!-- Left side columns -->
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+        <div class="container col-6 col-lg-6 col-md-12 col-sm-12">
             <div class="row">
                 <!-- Main panel -->
                 <div class="card">
@@ -145,8 +145,8 @@
                                     </div>
                                 </div>
 
-                                <div class="align-self-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-4">
-                                    <div class="card-title">
+                                <div class="col-4">
+                                    <div class="card-title mt-4">
                                         DANIEL ALEXANDER MUELAS RIVERA
                                     </div>
                                     <div>
@@ -159,7 +159,8 @@
                                         <i class="bi bi-person-fill"></i> <span> Coordinador de Técnologia </span>
                                     </div>
                                 </div>
-                                <div class="col-4 mt-2 align-self-center">
+
+                                <div class="col-4 align-self-center">
                                     <a href="" class="dashboard-user-door door-in">
                                         <div class="content-icon"> <i class="bi bi-box-arrow-right"></i> </div>
                                         <div class="content-text"> {{ __('Ingreso peatonal') }} </div>
@@ -201,7 +202,7 @@
         <!-- End Left side columns -->
 
         <!-- Right side columns -->
-        <div class="col-lg-6">
+        <div class="container col-6 col-lg-6 col-md-12 col-sm-12">
             <!-- Visitors today -->
             <div class="card">
                 <div class="card-body card-summary">

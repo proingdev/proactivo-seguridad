@@ -23,3 +23,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('configuration', 'App\Http\Controllers\AccessControl\Configuration\ConfigurationController')
     ->middleware('auth');
+
+/**
+ * Configuration
+ */
+//Companies
+Route::resource('empresas', 'App\Http\Controllers\AccessControl\Configuration\CompanyController')
+->middleware('auth');

@@ -4,9 +4,10 @@
 // Variables
 @import 'variables';
 
+// Access control
+@import '../css/app.css';
+
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-// Access control
-@import '../css/app.css';
 @import '../css/bootstrap-icons.css';
