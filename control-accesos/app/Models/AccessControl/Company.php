@@ -16,4 +16,14 @@ class Company extends Model
         'created_by',
         'updated_by'
     ];
+
+    /**
+     * Get all of the areas for the Company
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function areas()
+    {
+        return $this->hasMany(Area::class);
+    }
 }

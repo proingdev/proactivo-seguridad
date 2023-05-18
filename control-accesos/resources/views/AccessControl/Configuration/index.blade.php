@@ -26,7 +26,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" id="configuration-area-tab" data-bs-toggle="tab" href="#configuration-area"
-                        role="tab" aria-controls="configuration-area" aria-selected="false">Areas</a>
+                        role="tab" aria-controls="configuration-area" aria-selected="false">Áreas</a>
                 </li>
 
                 <li class="nav-item">
@@ -64,6 +64,12 @@
 <div class="modal fade" id="modalUpdateCompany" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     @include('AccessControl.Configuration.components.modals.edit-company-modal')
 </div>
+
+<!-- Modal update Area -->
+<div class="modal fade" id="modalUpdateArea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @include('AccessControl.Configuration.components.modals.edit-area-modal')
+</div>
+
 @endsection
 
 @section('scripts')
@@ -89,4 +95,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script src="js/modals/updateCompanyModal.js"></script>
+<script src="js/modals/updateAreaModal.js"></script>
 @endsection

@@ -20,9 +20,9 @@ class ConfigurationController extends Controller
 
         //get all areas
         $areas = Area::where('is_active', '=', true)
+            ->with('company')
             ->get();
-        
-        
+    
         //return to view
         return view('AccessControl.Configuration.index', [
             'companies' => $companies,

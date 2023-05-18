@@ -16,4 +16,14 @@ class Area extends Model
         'created_by',
         'updated_by'
     ];
+
+    /**
+     * Get the companies that owns the Area
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
