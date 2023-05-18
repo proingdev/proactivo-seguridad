@@ -28,5 +28,5 @@ Route::resource('configuration', 'App\Http\Controllers\AccessControl\Configurati
  * Configuration
  */
 //Companies
-Route::resource('empresas', 'App\Http\Controllers\AccessControl\Configuration\CompanyController')
-->middleware('auth');
+Route::resource('empresas', 'App\Http\Controllers\AccessControl\CompanyController')
+    ->middleware('auth');

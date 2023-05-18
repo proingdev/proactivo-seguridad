@@ -146,5 +146,14 @@
         </div>
     </div>
 </section>
+<!-- Modals -->
 
+<!-- Modal update company -->
+<div class="modal fade" id="modalUpdateCompany" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @include('AccessControl.Configuration.components.modals.edit-company-modal')
+</div>
+@endsection
+
+@section('scripts')
+<script src="js/modals/updateCompanyModal.js"></script>
 @endsection

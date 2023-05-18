@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AccessControl\Configuration;
 
 use App\Http\Controllers\Controller;
+use App\Models\AccessControl\Company;
 use Illuminate\Http\Request;
 
 class ConfigurationController extends Controller
@@ -12,8 +13,14 @@ class ConfigurationController extends Controller
      */
     public function index()
     {
-        //
-        return view('AccessControl.Configuration.index');
+        //get all companies
+        $companies = Company::where('is_active', '=', true)
+            ->get();
+        
+        //return to view
+        return view('AccessControl.Configuration.index', [
+            'companies' => $companies,
+        ]);
     }
 
     /**

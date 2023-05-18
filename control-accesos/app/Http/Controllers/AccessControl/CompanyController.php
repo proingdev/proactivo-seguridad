@@ -13,13 +13,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //get all companies
-        $companies = Company::where('is_active', '=', true)
-            ->get();
-        //return to view
-        return view('proactivo.configuration.companies', [
-            'companies' => $companies,
-        ]);
+
     }
 
     /**
@@ -45,10 +39,10 @@ class CompanyController extends Controller
         ]);
 
         if($companyCreated){
-            return redirect()->route('empresas.index')
+            return redirect()->route('configuration.index')
                 ->with('success', 'Se ha creado la empresa con éxito');
         }else{
-            return redirect()->route('empresas.index')
+            return redirect()->route('configuration.index')
                 ->with('error', 'No se pudo crear la empresa');
         }
     }
@@ -84,7 +78,7 @@ class CompanyController extends Controller
 
         $companyToUpdate->update();
 
-        return redirect()->route('empresas.index')
+        return redirect()->route('configuration.index')
             ->with('success', 'Se ha actualizado la empresa');
     }
 
@@ -98,7 +92,7 @@ class CompanyController extends Controller
         $companyToDelete->is_active = false;
         $companyToDelete->update();
 
-        return redirect()->route('empresas.index')
+        return redirect()->route('configuration.index')
             ->with('success', 'Se ha eliminado la empresa');
     }
 }
