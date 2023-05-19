@@ -73,7 +73,7 @@
                                     {{ __('Ver más') }}
                                 </a>
 
-                                <a href="" class="btn btn-secondary">
+                                <a href="{{ route('colaboradores.edit', '1') }}" class="btn btn-secondary">
                                     <i class="bi bi-pencil"></i>
                                     {{ __('Editar') }}
                                 </a>

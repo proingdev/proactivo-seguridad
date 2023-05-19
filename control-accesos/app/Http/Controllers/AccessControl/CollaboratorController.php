@@ -48,6 +48,7 @@ class CollaboratorController extends Controller
     public function edit(Collaborator $collaborator)
     {
         //
+        return view('AccessControl.Collaborators.edit');
     }
 
     /**
