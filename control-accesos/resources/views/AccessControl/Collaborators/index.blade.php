@@ -19,9 +19,8 @@
                 <div>
                     <h5 class="card-title"> {{__('Colaboradores')}} </h5>
                 </div>
-
                 <div>
-                    <a href="" class="btn btn-primary">
+                    <a href="{{ route('colaboradores.create') }}" class="btn btn-primary">
                         <i class="bi bi-person-add"></i> {{__('Crear colaborador')}}
                     </a>
 

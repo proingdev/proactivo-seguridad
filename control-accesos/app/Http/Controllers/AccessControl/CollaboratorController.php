@@ -23,6 +23,7 @@ class CollaboratorController extends Controller
     public function create()
     {
         //
+        return view('AccessControl.Collaborators.create');
     }
 
     /**

@@ -279,7 +279,7 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="{{ route('colaboradores.create') }}">
                             <span>Crear colaboradores</span>
                         </a>
                     </li>

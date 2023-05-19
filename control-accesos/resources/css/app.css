@@ -1122,3 +1122,10 @@ table th{
 .table-colaborator td {
     vertical-align: middle;
 }
+.form-heading {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #899bbd;
+    font-weight: 600;
+    text-decoration: solid;
+}
