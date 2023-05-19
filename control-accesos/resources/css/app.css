@@ -3,7 +3,7 @@
     --pisa-main: #0d489a;
     --pisa-secondary: #2459a3;
     --secondary-font-color: #444444;
-    --white: 
+    --white:
 }
 
 h1,
@@ -795,7 +795,7 @@ h6 {
     border-radius: 20px;
 }
 
-/* 
+/*
    in - out buttons
   */
 .dashboard-user-door {
@@ -1109,4 +1109,16 @@ table th{
 
 .btn-primary:hover{
     background-color: #2459a3 !important;
+}
+
+/*---------------------------
+- Collaborators
+---------------------------*/
+.table-colaborator img {
+    width: 80px;
+    border-radius: 10px;
+}
+
+.table-colaborator td {
+    vertical-align: middle;
 }

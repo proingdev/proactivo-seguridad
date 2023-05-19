@@ -25,6 +25,12 @@ Route::resource('configuration', 'App\Http\Controllers\AccessControl\Configurati
     ->middleware('auth');
 
 /**
+ * Collaborators
+ */
+Route::resource('colaboradores', 'App\Http\Controllers\AccessControl\CollaboratorController')
+    ->middleware('auth');
+
+/**
  * Configuration
  */
 

@@ -273,8 +273,14 @@
                 </a>
                 <ul id="colaborators-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('colaboradores.index') }}">
                             <span>Ver colaboradores</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span>Crear colaboradores</span>
                         </a>
                     </li>
                 </ul>

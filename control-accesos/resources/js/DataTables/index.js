@@ -4,6 +4,7 @@ $(document).ready(function () {
         ordering: true,
         searching: true,
         language: {
+
             lengthMenu: "Mostrar _MENU_ entradas",
             info: "Mostrando página _PAGE_ de _PAGES_",
             zeroRecords: "No se encontraron resultados",

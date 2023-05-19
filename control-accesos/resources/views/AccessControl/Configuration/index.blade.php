@@ -30,8 +30,13 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" id="configuration-cargos-tab" data-bs-toggle="tab" href="#configuration-cargos" role="tab" aria-controls="configuration-cargos"
-                        aria-selected="false">Cargos</a>
+                    <a class="nav-link" id="configuration-cargos-tab" data-bs-toggle="tab" href="#configuration-cargos"
+                        role="tab" aria-controls="configuration-cargos" aria-selected="false">Cargos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="configuration-locations-tab" data-bs-toggle="tab" href="#configuration-locations"
+                        role="tab" aria-controls="configuration-locations" aria-selected="false">Ubicaciones</a>
                 </li>
             </ul>
 
@@ -50,8 +55,17 @@
                 </div>
 
                 <!-- in charge -->
-                <div class="tab-pane fade p-3" id="configuration-cargos" role="tabpanel" aria-labelledby="configuration-cargos-tab">
+                <div class="tab-pane fade p-3" id="configuration-cargos" role="tabpanel"
+                    aria-labelledby="configuration-cargos-tab">
                     <!-- Contenido de la Tab 3 -->
+                    cargos
+                </div>
+
+                <!-- Locations -->
+                <div class="tab-pane fade p-3" id="configuration-locations" role="tabpanel"
+                    aria-labelledby="configuration-locations-tab">
+                    <!-- Contenido de la Tab 3 -->
+                    ubicaciones
                 </div>
             </div>
             <!-- End Bordered Tabs -->
