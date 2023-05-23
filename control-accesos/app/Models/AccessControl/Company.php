@@ -26,4 +26,14 @@ class Company extends Model
     {
         return $this->hasMany(Area::class);
     }
+
+    /**
+     * Get all of the locations for the Company
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function locations()
+    {
+        return $this->hasMany(Location::class);
+    }
 }

@@ -17,4 +17,25 @@ class JobTitle extends Model
         'created_by',
         'updated_by'
     ];
+
+    /**
+     * Get the jobTitle that owns the area
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function areas()
+    {
+        return $this->belongsTo(Area::class);
+    }
+    
+    /**
+     * Get the JobTitle that owns the company
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
 }

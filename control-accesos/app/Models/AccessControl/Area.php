@@ -26,4 +26,14 @@ class Area extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    /**
+     * Get all of the jobsTitle for the Company
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function jobTitles()
+    {
+        return $this->hasMany(JobTitle::class);
+    }
 }

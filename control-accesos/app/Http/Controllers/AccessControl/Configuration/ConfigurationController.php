@@ -5,6 +5,8 @@ namespace App\Http\Controllers\AccessControl\Configuration;
 use App\Http\Controllers\Controller;
 use App\Models\AccessControl\Company;
 use App\Models\AccessControl\Area;
+use App\Models\AccessControl\JobTitle;
+use App\Models\AccessControl\Location;
 use Illuminate\Http\Request;
 
 class ConfigurationController extends Controller
@@ -22,11 +24,24 @@ class ConfigurationController extends Controller
         $areas = Area::where('is_active', '=', true)
             ->with('company')
             ->get();
+        
+        //get all Job Titles
+        $jobTitles = JobTitle::where('is_active', '=', true)
+            ->with('areas')
+            ->with('company')
+            ->get();
+        
+        //get all Job Titles
+        $locations = Location::where('is_active', '=', true)
+            ->with('company')
+            ->get();
     
         //return to view
         return view('AccessControl.Configuration.index', [
             'companies' => $companies,
             'areas' => $areas,
+            'jobTitles' => $jobTitles,
+            'locations' => $locations,
         ]);
     }
 
