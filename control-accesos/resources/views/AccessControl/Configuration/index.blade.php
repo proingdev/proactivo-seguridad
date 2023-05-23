@@ -58,14 +58,15 @@
                 <div class="tab-pane fade p-3" id="configuration-cargos" role="tabpanel"
                     aria-labelledby="configuration-cargos-tab">
                     <!-- Contenido de la Tab 3 -->
-                    cargos
+                    @include('AccessControl.Configuration.components.create-show-job-titles')
                 </div>
 
                 <!-- Locations -->
                 <div class="tab-pane fade p-3" id="configuration-locations" role="tabpanel"
                     aria-labelledby="configuration-locations-tab">
                     <!-- Contenido de la Tab 3 -->
-                    ubicaciones
+                    @include('AccessControl.Configuration.components.create-show-locations')
+
                 </div>
             </div>
             <!-- End Bordered Tabs -->

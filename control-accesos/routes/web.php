@@ -46,3 +46,7 @@ Route::resource('empresas', 'App\Http\Controllers\AccessControl\CompanyControlle
 
 //Areas
 Route::resource('areas', 'App\Http\Controllers\AccessControl\AreaController');
+
+//Job titles
+Route::resource('cargos', 'App\Http\Controllers\AccessControl\JobTitleController');
+
