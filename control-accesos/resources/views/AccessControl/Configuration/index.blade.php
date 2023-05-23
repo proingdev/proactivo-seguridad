@@ -85,6 +85,10 @@
     @include('AccessControl.Configuration.components.modals.edit-area-modal')
 </div>
 
+<!-- Modal update Job Title -->
+<div class="modal fade" id="modalUpdateJobTitle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @include('AccessControl.Configuration.components.modals.edit-job-title-modal')
+</div>
 @endsection
 
 @section('scripts')
@@ -111,4 +115,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script src="js/modals/updateCompanyModal.js"></script>
 <script src="js/modals/updateAreaModal.js"></script>
+<script src="js/modals/updateJobTitleModal.js"></script>
 @endsection

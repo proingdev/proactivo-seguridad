@@ -23,7 +23,7 @@ class JobTitle extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function areas()
+    public function area()
     {
         return $this->belongsTo(Area::class);
     }

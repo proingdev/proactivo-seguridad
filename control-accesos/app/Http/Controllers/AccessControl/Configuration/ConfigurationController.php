@@ -27,10 +27,10 @@ class ConfigurationController extends Controller
         
         //get all Job Titles
         $jobTitles = JobTitle::where('is_active', '=', true)
-            ->with('areas')
+            ->with('area')
             ->with('company')
             ->get();
-        
+
         //get all Job Titles
         $locations = Location::where('is_active', '=', true)
             ->with('company')
