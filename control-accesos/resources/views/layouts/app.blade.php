@@ -293,13 +293,12 @@
                     <i class="bi bi-people"></i><span> {{ __('Visitantes') }} </span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="visitors-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="visitors-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('visitantes.index') }}">
                             <span>Ver visitantes</span>
                         </a>
                     </li>
-
                 </ul>
             </li>
             <!-- End visitors Colaboradores -->

@@ -31,6 +31,12 @@ Route::resource('colaboradores', 'App\Http\Controllers\AccessControl\Collaborato
     ->middleware('auth');
 
 /**
+ * visitors
+ */
+Route::resource('visitantes', 'App\Http\Controllers\AccessControl\VisitorController')
+    ->middleware('auth');
+
+/**
  * Configuration
  */
 

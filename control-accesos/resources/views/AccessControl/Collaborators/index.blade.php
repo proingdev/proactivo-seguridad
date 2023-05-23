@@ -94,27 +94,5 @@
 @endsection
 
 @section('scripts')
-<script>
-/**
- * Manage the tabs
- */
-document.addEventListener('DOMContentLoaded', function() {
-    var tabs = document.querySelectorAll('#myTabs .nav-link');
 
-    tabs.forEach(function(tab, index) {
-        tab.addEventListener('click', function() {
-            localStorage.setItem('lastTab', index.toString());
-        });
-
-        var lastTab = localStorage.getItem('lastTab');
-        if (lastTab !== null && parseInt(lastTab) === index) {
-            tab.classList.add('active');
-            document.querySelector(tab.getAttribute('href')).classList.add('show', 'active');
-        }
-    });
-});
-</script>
-
-<script src="js/modals/updateCompanyModal.js"></script>
-<script src="js/modals/updateAreaModal.js"></script>
 @endsection
