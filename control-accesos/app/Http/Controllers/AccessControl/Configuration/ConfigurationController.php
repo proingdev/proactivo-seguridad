@@ -5,6 +5,8 @@ namespace App\Http\Controllers\AccessControl\Configuration;
 use App\Http\Controllers\Controller;
 use App\Models\AccessControl\Company;
 use App\Models\AccessControl\Area;
+use App\Models\AccessControl\Arl;
+use App\Models\AccessControl\IdentificationType;
 use App\Models\AccessControl\JobTitle;
 use App\Models\AccessControl\Location;
 use Illuminate\Http\Request;
@@ -35,6 +37,14 @@ class ConfigurationController extends Controller
         $locations = Location::where('is_active', '=', true)
             ->with('company')
             ->get();
+        
+        //get all identifications types
+        $identificationTypes = IdentificationType::where('is_active', '=', true)
+            ->get();
+        
+        //get all arls
+        $arls = Arl::where('is_active', '=', true)
+            ->get();
     
         //return to view
         return view('AccessControl.Configuration.index', [
@@ -42,6 +52,8 @@ class ConfigurationController extends Controller
             'areas' => $areas,
             'jobTitles' => $jobTitles,
             'locations' => $locations,
+            'identificationTypes' => $identificationTypes,
+            'arls' => $arls,
         ]);
     }
 

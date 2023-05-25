@@ -5,7 +5,7 @@
     <h1>Configuración</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
             <li class="breadcrumb-item active">Configuración</li>
         </ol>
     </nav>

@@ -45,10 +45,19 @@ Route::resource('empresas', 'App\Http\Controllers\AccessControl\CompanyControlle
     ->middleware('auth');
 
 //Areas
-Route::resource('areas', 'App\Http\Controllers\AccessControl\AreaController');
+Route::resource('areas', 'App\Http\Controllers\AccessControl\AreaController')
+    ->middleware('auth');
 
 //Job titles
-Route::resource('cargos', 'App\Http\Controllers\AccessControl\JobTitleController');
+Route::resource('cargos', 'App\Http\Controllers\AccessControl\JobTitleController')
+    ->middleware('auth');
 
 //Locations
-Route::resource('ubicaciones', 'App\Http\Controllers\AccessControl\LocationController');
+Route::resource('ubicaciones', 'App\Http\Controllers\AccessControl\LocationController')
+    ->middleware('auth');
+
+Route::resource('tipo-indentificaciones', 'App\Http\Controllers\AccessControl\IdentificationTypeController')
+    ->middleware('auth');
+
+Route::resource('arls', 'App\Http\Controllers\AccessControl\ArlController')
+    ->middleware('auth');

@@ -1,6 +1,6 @@
 <!-- Company Form -->
 <h5 class="card-title mb-3"> {{__('Crear tipos de identificación')}} </h5> 
-<form class="row needs-validation" action="{{ route('ubicaciones.store') }}" method="POST" novalidate>
+<form class="row needs-validation" action="{{ route('tipo-indentificaciones.store') }}" method="POST" novalidate>
     @csrf
     <div class="col-auto">
         <label for="name" class="form-label fw-bold"> Tipo de identificación: <small class="required">*</small></label>
@@ -56,7 +56,7 @@
                             </a>
                         </div>
                         <div class="col-4">
-                            <form action="{{ route('ubicaciones.destroy', $identificationType->id) }}" method="post">
+                            <form action="{{ route('tipo-indentificaciones.destroy', $identificationType->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
 

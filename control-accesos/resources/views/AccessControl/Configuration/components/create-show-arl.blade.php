@@ -1,6 +1,6 @@
 <!-- Company Form -->
 <h5 class="card-title"> {{__('Registrar ARL')}} </h5>
-<form class="row needs-validation" action="{{ route('ubicaciones.store') }}" method="POST" novalidate>
+<form class="row needs-validation" action="{{ route('arls.store') }}" method="POST" novalidate>
     @csrf
     <div class="col-auto">
         <label for="name" class="form-label fw-bold"> Nombre de la ARL: <small class="required">*</small></label>
@@ -56,7 +56,7 @@
                             </a>
                         </div>
                         <div class="col-4">
-                            <form action="{{ route('ubicaciones.destroy', $arl->id) }}" method="post">
+                            <form action="{{ route('arls.destroy', $arl->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
 
