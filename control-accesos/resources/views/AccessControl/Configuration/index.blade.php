@@ -145,4 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="js/modals/updateAreaModal.js"></script>
 <script src="js/modals/updateJobTitleModal.js"></script>
 <script src="js/modals/updateLocationModal.js"></script>
+<script src="js/modals/updateIdentificationTypeModal.js"></script>
+<script src="js/modals/updateArlModal.js"></script>
 @endsection

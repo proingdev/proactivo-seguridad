@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col-4">
                             <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#modalArl" 
+                                data-bs-target="#modalUpdateArl" 
                                 data-bs-arl-id="{{ $arl->id }}"
                                 data-bs-arl-name="{{ $arl->name }}">
                                 <i class="bi bi-pencil-fill"></i>
@@ -77,6 +77,6 @@
 </div>
 
 <!-- Modal update Job Title -->
-<div class="modal fade" id="modalArl" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    @include('AccessControl.Configuration.components.modals.edit-locations-modal')
+<div class="modal fade" id="modalUpdateArl" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @include('AccessControl.Configuration.components.modals.edit-arl-modal')
 </div>

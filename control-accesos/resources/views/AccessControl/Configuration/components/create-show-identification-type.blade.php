@@ -78,5 +78,5 @@
 
 <!-- Modal update Job Title -->
 <div class="modal fade" id="modalUpdateIdentificationType" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    @include('AccessControl.Configuration.components.modals.edit-locations-modal')
+    @include('AccessControl.Configuration.components.modals.edit-identification-type-modal')
 </div>
