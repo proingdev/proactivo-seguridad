@@ -50,3 +50,5 @@ Route::resource('areas', 'App\Http\Controllers\AccessControl\AreaController');
 //Job titles
 Route::resource('cargos', 'App\Http\Controllers\AccessControl\JobTitleController');
 
+//Locations
+Route::resource('ubicaciones', 'App\Http\Controllers\AccessControl\LocationController');

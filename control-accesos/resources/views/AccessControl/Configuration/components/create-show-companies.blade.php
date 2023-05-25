@@ -40,7 +40,7 @@
 <hr>
 
 
-<div class="table-responsive">
+<div class="table-responsive p-2">
     <table class="table table-hover table responsive">
         <thead>
             <tr>

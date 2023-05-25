@@ -1,12 +1,12 @@
 <!-- Company Form -->
-<h5 class="card-title"> {{__('Crear Localizaciones')}} </h5>
-<form class="row needs-validation" action="{{ route('areas.store') }}" method="POST" novalidate>
+<h5 class="card-title"> {{__('Crear Ubicaciones')}} </h5>
+<form class="row needs-validation" action="{{ route('ubicaciones.store') }}" method="POST" novalidate>
     @csrf
     <div class="col-auto">
-        <label for="name" class="form-label fw-bold"> Nombre de la localización: <small class="required">*</small></label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Área" required>
+        <label for="name" class="form-label fw-bold"> Nombre de la ubicación: <small class="required">*</small></label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Ubicación" required>
         <span class="invalid-feedback" role="alert">
-            <strong>{{ __('El nombre de la localización es requerido') }}</strong>
+            <strong>{{ __('El nombre de la ubicación es requerido') }}</strong>
         </span>
     </div>
 
@@ -27,7 +27,7 @@
     </div>
 
     <div class="col-auto d-flex align-items-end">
-        <button type="submit" class="btn btn-primary">Crear área</button>
+        <button type="submit" class="btn btn-primary">Crear ubicación</button>
     </div>
 </form>
 
@@ -46,38 +46,38 @@
 
 
 <div class="table-responsive p-2">
-    <table class="table table-hover" id="dataTable">
+    <table class="table table-hover" id="dataTableLocations">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Area</th>
+                <th scope="col">Ubicación</th>
                 <th scope="col">Empresa</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @if( isset($areas) && sizeof($areas) > 0 )
-            @foreach( $areas as $key => $area )
+            @if( isset($locations) && sizeof($locations) > 0 )
+            @foreach( $locations as $key => $location )
 
             <tr>
                 <th scope="row"> {{ $key + 1 }} </th>
-                <td> {{ $area->name }}</td>
-                <td> {{ $area->company->name }} </td>
+                <td> {{ $location->name }}</td>
+                <td> {{ $location->company->name }} </td>
                 <td>
                     <div class="row">
                         <div class="col-4">
                             <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#modalUpdateArea" 
-                                data-bs-area-id="{{ $area->id }}"
-                                data-bs-area-name="{{ $area->name }}" 
-                                data-bs-company-id="{{ $area->company_id }}"
-                                data-bs-company-name="{{ $area->company->name}}"> 
+                                data-bs-target="#modalUpdateLocation" 
+                                data-bs-location-id="{{ $location->id }}"
+                                data-bs-location-name="{{ $location->name }}" 
+                                data-bs-company-id="{{ $location->company_id }}"
+                                data-bs-company-name="{{ $location->company->name}}"> 
                                 <i class="bi bi-pencil-fill"></i>
                                 {{ __('Editar') }}
                             </a>
                         </div>
                         <div class="col-4">
-                            <form action="{{ route('areas.destroy', $area->id) }}" method="post">
+                            <form action="{{ route('ubicaciones.destroy', $location->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
 
@@ -95,4 +95,9 @@
             @endif()
         </tbody>
     </table>
+</div>
+
+<!-- Modal update Job Title -->
+<div class="modal fade" id="modalUpdateLocation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @include('AccessControl.Configuration.components.modals.edit-locations-modal')
 </div>

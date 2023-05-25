@@ -53,7 +53,7 @@
                     <hr>
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary btn-form">
-                            {{ __('Editar Empresa') }}
+                            {{ __('Editar Cargo') }}
                         </button>
                     </div>
             </form>

@@ -35,8 +35,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" id="configuration-locations-tab" data-bs-toggle="tab" href="#configuration-locations"
-                        role="tab" aria-controls="configuration-locations" aria-selected="false">Ubicaciones</a>
+                    <a class="nav-link" id="configuration-locations-tab" data-bs-toggle="tab"
+                        href="#configuration-locations" role="tab" aria-controls="configuration-locations"
+                        aria-selected="false">Ubicaciones</a>
                 </li>
             </ul>
 
@@ -66,7 +67,6 @@
                     aria-labelledby="configuration-locations-tab">
                     <!-- Contenido de la Tab 3 -->
                     @include('AccessControl.Configuration.components.create-show-locations')
-
                 </div>
             </div>
             <!-- End Bordered Tabs -->
@@ -74,7 +74,6 @@
     </div>
 </section>
 <!-- Modals -->
-
 <!-- Modal update company -->
 <div class="modal fade" id="modalUpdateCompany" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     @include('AccessControl.Configuration.components.modals.edit-company-modal')
@@ -89,6 +88,7 @@
 <div class="modal fade" id="modalUpdateJobTitle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     @include('AccessControl.Configuration.components.modals.edit-job-title-modal')
 </div>
+
 @endsection
 
 @section('scripts')
@@ -116,4 +116,5 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="js/modals/updateCompanyModal.js"></script>
 <script src="js/modals/updateAreaModal.js"></script>
 <script src="js/modals/updateJobTitleModal.js"></script>
+<script src="js/modals/updateLocationModal.js"></script>
 @endsection

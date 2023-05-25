@@ -4,7 +4,52 @@ $(document).ready(function () {
         ordering: true,
         searching: true,
         language: {
+            lengthMenu: "Mostrar _MENU_ entradas",
+            info: "Mostrando página _PAGE_ de _PAGES_",
+            zeroRecords: "No se encontraron resultados",
+            emptyTable: "Ningún dato disponible en esta tabla",
+            infoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+            search: "Buscar:",
+            loadingRecords: "Cargando...",
+            paginate: {
+                first: "Primero",
+                last: "Último",
+                next: "Siguiente",
+                previous: "Anterior"
+            }
+        },
+    });
+});
 
+// Call the dataTables jQuery plugin
+$(document).ready(function () {
+    $('#dataTableJobTitles').DataTable({
+        ordering: true,
+        searching: true,
+        language: {
+            lengthMenu: "Mostrar _MENU_ entradas",
+            info: "Mostrando página _PAGE_ de _PAGES_",
+            zeroRecords: "No se encontraron resultados",
+            emptyTable: "Ningún dato disponible en esta tabla",
+            infoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+            search: "Buscar:",
+            loadingRecords: "Cargando...",
+            paginate: {
+                first: "Primero",
+                last: "Último",
+                next: "Siguiente",
+                previous: "Anterior"
+            }
+        },
+    });
+});
+
+// Call the dataTables jQuery plugin
+$(document).ready(function () {
+    $('#dataTableLocations').DataTable({
+        ordering: true,
+        searching: true,
+        language: {
             lengthMenu: "Mostrar _MENU_ entradas",
             info: "Mostrando página _PAGE_ de _PAGES_",
             zeroRecords: "No se encontraron resultados",
