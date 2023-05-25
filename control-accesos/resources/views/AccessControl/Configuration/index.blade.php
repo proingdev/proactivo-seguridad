@@ -73,7 +73,7 @@
                     <!-- Contenido de la Tab 3 -->
                     @include('AccessControl.Configuration.components.create-show-job-titles')
                 </div>
-                
+
                 <!-- Locations -->
                 <div class="tab-pane fade p-3" id="configuration-locations" role="tabpanel"
                     aria-labelledby="configuration-locations-tab">
@@ -85,14 +85,14 @@
                 <div class="tab-pane fade p-3" id="configuration-identifications-type" role="tabpanel"
                     aria-labelledby="configuration-identifications-type-tab">
                     <!-- Contenido de la Tab 3 -->
-                    Identifications type
+                    @include('AccessControl.Configuration.components.create-show-identification-type')
                 </div>
 
                 <!-- arl -->
                 <div class="tab-pane fade p-3" id="configuration-arl" role="tabpanel"
                     aria-labelledby="configuration-arl-tab">
                     <!-- Contenido de la Tab 3 -->
-                    arl
+                    @include('AccessControl.Configuration.components.create-show-arl')
                 </div>
 
 
