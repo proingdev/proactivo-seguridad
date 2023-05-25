@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\AccessControl;
 
 use App\Http\Controllers\Controller;
+use App\Models\AccessControl\Area;
 use App\Models\AccessControl\Collaborator;
+use App\Models\AccessControl\Company;
+use App\Models\AccessControl\IdentificationType;
+use App\Models\AccessControl\JobTitle;
+use App\Models\AccessControl\Location;
 use Illuminate\Http\Request;
 
 class CollaboratorController extends Controller
@@ -13,7 +18,6 @@ class CollaboratorController extends Controller
      */
     public function index()
     {
-        //
         return view('AccessControl.Collaborators.index');
     }
 
@@ -22,8 +26,33 @@ class CollaboratorController extends Controller
      */
     public function create()
     {
-        //
-        return view('AccessControl.Collaborators.create');
+        //Get all identifications types
+        $identificationTypes = IdentificationType::where('is_active', '=', true)
+        ->get();
+
+        //Get all companies
+        $companies = Company::where('is_active', '=', true)
+        ->get();
+
+        //Get all Áreas
+        $areas = Area::where('is_active', '=', true)
+        ->get();
+
+        //Get all Cargos
+        $jobTitles = JobTitle::where('is_active', '=', true)
+        ->get();
+
+        //Get all Locations
+        $locations = Location::where('is_active', '=', true)
+            ->get();
+
+        return view('AccessControl.Collaborators.create', [
+            'companies' => $companies,
+            'areas' => $areas,
+            'jobTitles' => $jobTitles,
+            'locations' => $locations,
+            'identificationTypes' => $identificationTypes,
+        ]);
     }
 
     /**

@@ -54,6 +54,11 @@
                                 <select name="identification_type" id="identification_type" class="form-select"
                                     required>
                                     <option value="" selected> {{ __('Seleccione...') }} </option>
+                                    @if( isset($identificationTypes) && sizeof($identificationTypes) > 0 )
+                                    @foreach( $identificationTypes as $key => $identificationType )
+                                    <option value="{{ $identificationType->id }}"> {{ $identificationType->name  }} </option>
+                                    @endforeach
+                                    @endif
                                 </select>
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ __('El tipo de identificación es requerido') }}</strong>
@@ -116,6 +121,11 @@
                                 </label>
                                 <select name="company_id" id="company_id" class="form-select" required>
                                     <option value="" selected> {{ __('Seleccione...') }} </option>
+                                    @if( isset($companies) && sizeof($companies) > 0 )
+                                    @foreach( $companies as $key => $company )
+                                    <option value="{{ $company->id }}"> {{ $company->name  }} </option>
+                                    @endforeach
+                                    @endif
                                 </select>
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ __('La empresa es requerida') }}</strong>
@@ -129,6 +139,11 @@
                                 </label>
                                 <select name="area_id" id="area_id" class="form-select" required>
                                     <option value="" selected> {{ __('Seleccione...') }} </option>
+                                    @if( isset($areas) && sizeof($areas) > 0 )
+                                    @foreach( $areas as $key => $area )
+                                    <option value="{{ $area->id }}"> {{ $area->name  }} </option>
+                                    @endforeach
+                                    @endif
                                 </select>
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ __('El área es requerida') }}</strong>
@@ -142,6 +157,11 @@
                                 </label>
                                 <select name="job_title_id" id="job_title_id" class="form-select" required>
                                     <option value="" selected> {{ __('Seleccione...') }} </option>
+                                    @if( isset($jobTitles) && sizeof($jobTitles) > 0 )
+                                    @foreach( $jobTitles as $key => $jobTitle )
+                                    <option value="{{ $jobTitle->id }}"> {{ $jobTitle->name  }} </option>
+                                    @endforeach
+                                    @endif
                                 </select>
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ __('El cargo es requerido') }}</strong>
@@ -155,6 +175,11 @@
                                 </label>
                                 <select name="location_id" id="location_id" class="form-select" required>
                                     <option value="" selected> {{ __('Seleccione...') }} </option>
+                                    @if( isset($locations) && sizeof($locations) > 0 )
+                                    @foreach( $locations as $key => $location )
+                                    <option value="{{ $location->id }}"> {{ $location->name  }} </option>
+                                    @endforeach
+                                    @endif
                                 </select>
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ __('La ubicación es requerida es requerido') }}</strong>
