@@ -11,8 +11,8 @@
                 @method('PATCH')
                 <div class="row">
                     <div class="col-auto mb-3">
-                        <label for="name" class="form-label fw-bold"> Nombre de la ubicación: <small
-                                class="required">*</small></label>
+                        <label for="name" class="form-label fw-bold"> Nombre de la ubicación:
+                            <small class="required">*</small></label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Ubicación" required>
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ __('El nombre de la ubicación es requerido') }}</strong>
@@ -43,6 +43,6 @@
                     </div>
             </form>
         </div>
-
     </div>
+</div>
 </div>

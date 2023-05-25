@@ -39,6 +39,18 @@
                         href="#configuration-locations" role="tab" aria-controls="configuration-locations"
                         aria-selected="false">Ubicaciones</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="configuration-identifications-type-tab" data-bs-toggle="tab"
+                        href="#configuration-identifications-type" role="tab"
+                        aria-controls="configuration-identifications-type" aria-selected="false">Tipos de
+                        identificación</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="configuration-arl-tab" data-bs-toggle="tab" href="#configuration-arl"
+                        role="tab" aria-controls="configuration-arl" aria-selected="false">ARL</a>
+                </li>
             </ul>
 
             <div class="tab-content" id="myTabContent">
@@ -61,13 +73,29 @@
                     <!-- Contenido de la Tab 3 -->
                     @include('AccessControl.Configuration.components.create-show-job-titles')
                 </div>
-
+                
                 <!-- Locations -->
                 <div class="tab-pane fade p-3" id="configuration-locations" role="tabpanel"
                     aria-labelledby="configuration-locations-tab">
                     <!-- Contenido de la Tab 3 -->
                     @include('AccessControl.Configuration.components.create-show-locations')
                 </div>
+
+                <!-- identifications type -->
+                <div class="tab-pane fade p-3" id="configuration-identifications-type" role="tabpanel"
+                    aria-labelledby="configuration-identifications-type-tab">
+                    <!-- Contenido de la Tab 3 -->
+                    Identifications type
+                </div>
+
+                <!-- arl -->
+                <div class="tab-pane fade p-3" id="configuration-arl" role="tabpanel"
+                    aria-labelledby="configuration-arl-tab">
+                    <!-- Contenido de la Tab 3 -->
+                    arl
+                </div>
+
+
             </div>
             <!-- End Bordered Tabs -->
         </div>

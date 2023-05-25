@@ -47,6 +47,7 @@ class ConfigurationController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * SHOW THE DROPDOWN LIST
      */
     public function create()
     {

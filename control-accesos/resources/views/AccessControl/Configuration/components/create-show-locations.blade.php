@@ -12,7 +12,8 @@
 
     <div class="col-auto">
         <label for="name" class="form-label fw-bold"> Empresa:
-            <small class="required">*</small></label>
+            <small class="required">*</small>
+        </label>
         <select name="company_id" id="company_id" class="form-select" required>
             <option value="" selected>Seleccione...</option>
             @if( isset($companies) && sizeof($companies) > 0 )
@@ -44,7 +45,6 @@
 @endif
 <hr>
 
-
 <div class="table-responsive p-2">
     <table class="table table-hover" id="dataTableLocations">
         <thead>
@@ -67,11 +67,10 @@
                     <div class="row">
                         <div class="col-4">
                             <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#modalUpdateLocation" 
-                                data-bs-location-id="{{ $location->id }}"
-                                data-bs-location-name="{{ $location->name }}" 
+                                data-bs-target="#modalUpdateLocation" data-bs-location-id="{{ $location->id }}"
+                                data-bs-location-name="{{ $location->name }}"
                                 data-bs-company-id="{{ $location->company_id }}"
-                                data-bs-company-name="{{ $location->company->name}}"> 
+                                data-bs-company-name="{{ $location->company->name}}">
                                 <i class="bi bi-pencil-fill"></i>
                                 {{ __('Editar') }}
                             </a>
