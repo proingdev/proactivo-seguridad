@@ -19,18 +19,51 @@
             <div class="col-xl-4">
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="{{ asset('images/default.png') }}" alt="Profile">
-                        <h2>Colaborador</h2>
+                        <!-- show when the image is taken -->
+                        <div id="capturedImageContainer"></div>
+                        
+                        <!-- Show default or when is canceled -->
+                        <div id="defaultImage">
+                            <img src="{{asset('images/default.png')}}">
+                        </div>
+                        
+                        <!-- Show streaming video to take a photo -->
+                        <div class="cameraFeed" id="cameraFeed"></div>
+                        
+                        <h2>
+                            <label id="labelName">
+                                Nombre
+                            </label>
+                            <label id="labelLastName">
+                                Colaborador
+                            </label>
+                        </h2>
                         <h3>Cargo</h3>
+
                         <div class="mt-2">
-                            <a href="" class="btn btn-primary">
+                            
+                            <!-- Show first time, open camera -->
+                            <a id="openCameraBtn" class="btn btn-primary">
+                                <i class="bi bi-camera"></i>
+                                {{ __('Capturar desde cámara') }}
+                            </a>
+
+                            <!-- Upload a photo  -->
+                            <a id="uploadPhotoBtn" class="btn btn-secondary">
+                                <i class="bi bi-upload"></i>
+                                {{ __('Subir fotografía') }}
+                            </a>
+
+                            <!-- Take a photo only show when the open Camera was pressed -->
+                            <a id="captureBtn" class="btn btn-primary captureBtn">
                                 <i class="bi bi-camera"></i>
                                 {{ __('Tomar fotografia') }}
                             </a>
 
-                            <a href="" class="btn btn-secondary">
-                                <i class="bi bi-upload"></i>
-                                {{ __('Subir fotografía') }}
+                            <!-- Cancel a Photo -->
+                            <a id="cancelBtn" class="btn btn-danger">
+                                <i class="bi bi-x-circle"></i>
+                                {{ __('Cancelar') }}
                             </a>
                         </div>
                     </div>
@@ -56,7 +89,8 @@
                                     <option value="" selected> {{ __('Seleccione...') }} </option>
                                     @if( isset($identificationTypes) && sizeof($identificationTypes) > 0 )
                                     @foreach( $identificationTypes as $key => $identificationType )
-                                    <option value="{{ $identificationType->id }}"> {{ $identificationType->name  }} </option>
+                                    <option value="{{ $identificationType->id }}"> {{ $identificationType->name  }}
+                                    </option>
                                     @endforeach
                                     @endif
                                 </select>
@@ -109,6 +143,15 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ __('El correo es requerido') }}</strong>
                                 </span>
+                            </div>
+
+
+                            <!-- photo info -->
+                            <div class="col-4 mb-3">
+                                <label for="photoDataInput fw-bold" class="form-label">
+                                    {{ __('Información de foto:') }} <small> * </small>
+                                </label>
+                                <input type="text" name="photoDataInput" id="photoDataInput" class="form-control">
                             </div>
 
                             <hr>
@@ -186,7 +229,6 @@
                                 </span>
                             </div>
 
-
                         </div>
 
                         <hr>
@@ -206,5 +248,6 @@
 @endsection
 
 @section('scripts')
-
+<script src="{{ asset('js/collaborators/camera.js') }}"></script>
+<script src="{{ asset('js/collaborators/inputsControl.js') }}"></script>
 @endsection
