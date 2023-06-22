@@ -50,4 +50,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Generate a new user password
+     */
+    public static function generatePassword($length)
+    {
+        $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $aleatoryString = '';
+    
+        for ($i = 0; $i < $length; $i++) {
+            $aleatoryIndex = mt_rand(0, strlen($chars) - 1);
+            $aleatoryChar = $chars[$aleatoryIndex];
+            $aleatoryString .= $aleatoryChar;
+        }
+    
+        return $aleatoryString;
+    }
 }

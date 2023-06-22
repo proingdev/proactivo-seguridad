@@ -238,9 +238,9 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span> {{ __('Cerrar sesión') }} </span>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="bi bi-door-open"></i> {{ __('Cerrar Sesióna') }}
                             </a>
                         </li>
 
@@ -263,7 +263,7 @@
                     <span>Inicio</span>
                 </a>
             </li><!-- End Dashboard Nav -->
-            <li class="nav-heading">COntrol de accesos</li>
+            <li class="nav-heading">Control de accesos</li>
 
             <!-- Colaborators -->
             <li class="nav-item">
@@ -344,7 +344,10 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
 </body>
+
+
 @yield('scripts')
 
 </html>

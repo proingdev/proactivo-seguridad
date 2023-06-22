@@ -14,7 +14,8 @@
 <!-- End Page Title -->
 
 <section class="section profile">
-    <form action="#" class="needs-validation" novalidate>
+    <form action="{{ route('colaboradores.store') }}" method="POST" class="needs-validation" novalidate>
+        @csrf
         <div class="row">
             <div class="col-xl-4">
                 <div class="card">
@@ -148,10 +149,7 @@
 
                             <!-- photo info -->
                             <div class="col-4 mb-3">
-                                <label for="photoDataInput fw-bold" class="form-label">
-                                    {{ __('Información de foto:') }} <small> * </small>
-                                </label>
-                                <input type="text" name="photoDataInput" id="photoDataInput" class="form-control">
+                                <input type="hidden" name="photoDataInput" id="photoDataInput" class="form-control">
                             </div>
 
                             <hr>
