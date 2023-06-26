@@ -58,6 +58,8 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if( isset($users) && sizeof($users) > 0 )
+                        @foreach( $users as $key => $user )
                         <tr>
                             <th scope="row"> 1 </th>
                             <td>
@@ -95,6 +97,8 @@
                                 </a>
                             </td>
                         </tr>
+                        @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>

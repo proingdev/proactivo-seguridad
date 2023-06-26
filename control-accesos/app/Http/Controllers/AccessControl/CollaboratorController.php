@@ -12,10 +12,8 @@ use App\Models\AccessControl\JobTitle;
 use App\Models\AccessControl\Location;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
 class CollaboratorController extends Controller
@@ -25,7 +23,17 @@ class CollaboratorController extends Controller
      */
     public function index()
     {
-        return view('AccessControl.Collaborators.index');
+        // Get all user collaborator active
+        // TODO: Get all relationships
+        $users = User::where('is_active', '=', true)
+            ->with('collaborator')
+            ->get();
+
+        dd($users);
+
+        return view('AccessControl.Collaborators.index', [
+            'users' => $users,
+        ]);
     }
 
     /**
@@ -125,7 +133,7 @@ class CollaboratorController extends Controller
                     $fileName = uniqid() . '.png';
 
                     // Save the user collaborator image
-                    $filePath = 'collaborators/images/' . $fileName;
+                    $filePath = 'storage/collaborators/images/' . $fileName;
                     Storage::disk('public')->put($filePath, $image);
     
                     $userCreated->photo_path = $filePath;

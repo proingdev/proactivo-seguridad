@@ -17,4 +17,12 @@ class Collaborator extends Model
         'job_title_id',
         'location_id', 
     ];
+
+    /**
+     * Get the user that owns the phone.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

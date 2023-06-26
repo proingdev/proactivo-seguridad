@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Models\AccessControl\Collaborator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -51,12 +53,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Relations
+
+    /**
+     * Get the collaborator associated with the user
+     */
+    public function collaborator()
+    {
+        return $this->hasOne(Collaborator::class);
+    }
+
     /**
      * Generate a new user password
      */
     public static function generatePassword($length)
     {
-        $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $chars = '0123456789*#abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$%&';
         $aleatoryString = '';
     
         for ($i = 0; $i < $length; $i++) {
