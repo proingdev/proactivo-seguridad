@@ -19,6 +19,7 @@
         }
 
         .greeting{
+            margin-top: 12px;
             font-size: 20px;
             font-weight: bolder;
         }

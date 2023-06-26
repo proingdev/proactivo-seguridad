@@ -117,11 +117,13 @@ class CollaboratorController extends Controller
                 // Verify if the form send image
                 if( $data['photoDataInput'] != null ){
                     
-                    $imageData = str_replace('data:image/png;base64,', '', $data['photoDataInput']);
-                    $imageData = str_replace(' ', '+', $imageData);
-                    $image = base64_decode($imageData);
+                    // $imageData = str_replace('data:image/png;base64,', '', $data['photoDataInput']);
+                    // $imageData = str_replace(' ', '+', $imageData);
+                    $photoData = preg_replace('/^data:image\/(jpeg|png|gif);base64,/', '', $data['photoDataInput']);
+                    $image = base64_decode($photoData);
 
                     $fileName = uniqid() . '.png';
+
                     // Save the user collaborator image
                     $filePath = 'collaborators/images/' . $fileName;
                     Storage::disk('public')->put($filePath, $image);
@@ -138,7 +140,15 @@ class CollaboratorController extends Controller
 
                 return redirect()->route('colaboradores.index')
                     ->with('success', 'Se ha realizado la creación del colaborador');
+                    
+            }else{
+                return redirect()->route('colaboradores.index')
+                ->with('error', 'No se pudo crear el colaborador');
             }
+
+        }else{
+            return redirect()->route('colaboradores.index')
+            ->with('error', 'No se pudo crear el usuario');
         }
 
         
