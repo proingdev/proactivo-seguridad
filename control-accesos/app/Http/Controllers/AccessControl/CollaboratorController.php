@@ -26,7 +26,10 @@ class CollaboratorController extends Controller
         // Get all user collaborator active
         // TODO: Get all relationships
         $users = User::where('is_active', '=', true)
-            ->with('collaborator')
+            ->with('collaborators.company')
+            ->with('collaborators.area')
+            ->with('collaborators.jobTitle')
+            ->with('collaborators.location')
             ->get();
 
         dd($users);
