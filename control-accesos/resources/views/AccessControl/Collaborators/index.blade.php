@@ -13,6 +13,7 @@
 <!-- End Page Title -->
 
 <section class="section profile">
+
     <div class="card">
         <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
@@ -30,7 +31,17 @@
                 </div>
             </div>
             <hr>
-
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @elseif(session('error'))
+            <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
             <div class="table-responsive">
                 <table class="table table-hover table-colaborator" id="dataTable">
                     <thead>

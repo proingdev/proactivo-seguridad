@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AccessControl;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendTemporalPassword;
 use App\Models\AccessControl\Area;
 use App\Models\AccessControl\Collaborator;
 use App\Models\AccessControl\Company;
@@ -11,6 +12,9 @@ use App\Models\AccessControl\JobTitle;
 use App\Models\AccessControl\Location;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
@@ -63,17 +67,25 @@ class CollaboratorController extends Controller
      */
     public function store(Request $request)
     {
+        /**
+         * TODO: 
+         * Hay que verificar lo que suceden los siguientes escenarios:
+         * - El usuario ya existe
+         * - El colaborador ya existe
+         * - Cuando no se puede enviar el correo
+         */
         // Receive data from form
         $data = $request->all();
-        dd($data);
 
         $imagePath = "/images/default.png";
 
         // Create a new user password
-        $password = User::generatePassword(6);
+        $password = User::generatePassword(8);
 
-        //Get the username from email
-        $username = explode("@", $data['email']);
+        $data['password'] = Hash::make($password);
+
+        // Get the username from email
+        $username = explode("@", $data['email'])[0];
 
         // Create a user with request info
         $userCreated = User::create([
@@ -84,9 +96,9 @@ class CollaboratorController extends Controller
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
-            'role_id' => 2, // TODO: Change this when roles will defined on DB
+            'role_id' => 2, // TODO: Realizar la configuración de los roles
             'created_by' => auth()->user()->id,
-            'password' => $password,
+            'password' =>  $data['password'],
         ]);
 
         // if the user was created
@@ -110,16 +122,22 @@ class CollaboratorController extends Controller
                     $image = base64_decode($imageData);
 
                     $fileName = uniqid() . '.png';
+                    // Save the user collaborator image
+                    $filePath = 'collaborators/images/' . $fileName;
+                    Storage::disk('public')->put($filePath, $image);
+    
+                    $userCreated->photo_path = $filePath;
+                    $userCreated->save();
+    
                 }
+
+                $fullName = $data['name'] . " " . $data['last_name'];
                 
-                // Save the user collaborator image
-                $filePath = 'collaborators/images/' . $fileName;
-                Storage::disk('public')->put($filePath, $image);
+                // Enviar contraseña por correo.
+                Mail::to($data['email'])->send(new SendTemporalPassword($fullName, $password, $username));
 
-                $userCreated->photo_path = $filePath;
-                $userCreated->save();
-
-                //TODO: Enviar contraseña por correo.
+                return redirect()->route('colaboradores.index')
+                    ->with('success', 'Se ha realizado la creación del colaborador');
             }
         }
 
