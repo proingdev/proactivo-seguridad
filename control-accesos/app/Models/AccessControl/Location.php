@@ -26,4 +26,9 @@ class Location extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function collaborators()
+    {
+        return $this->hasMany(Collaborator::class);
+    }
 }

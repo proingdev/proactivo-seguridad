@@ -27,6 +27,7 @@ class Company extends Model
         return $this->hasMany(Area::class);
     }
 
+    
     /**
      * Get all of the locations for the Company
      *
@@ -35,5 +36,13 @@ class Company extends Model
     public function locations()
     {
         return $this->hasMany(Location::class);
+    }
+
+    /**
+     * Get the collaborator associated with the company
+     */
+    public function collaborators()
+    {
+        return $this->hasMany(Collaborator::class);
     }
 }

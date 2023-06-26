@@ -58,7 +58,7 @@ class User extends Authenticatable
     /**
      * Get the collaborator associated with the user
      */
-    public function collaborator()
+    public function collaborators()
     {
         return $this->hasOne(Collaborator::class);
     }

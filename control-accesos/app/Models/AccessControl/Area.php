@@ -32,8 +32,9 @@ class Area extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function jobTitles()
+
+    public function collaborators()
     {
-        return $this->hasMany(JobTitle::class);
+        return $this->hasMany(Collaborator::class);
     }
 }

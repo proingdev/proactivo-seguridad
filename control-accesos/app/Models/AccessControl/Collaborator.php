@@ -21,8 +21,28 @@ class Collaborator extends Model
     /**
      * Get the user that owns the phone.
      */
-    public function user()
+    public function users()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
+    }
+
+    public function jobTitle()
+    {
+        return $this->belongsTo(JobTitle::class);
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
     }
 }
