@@ -27,11 +27,13 @@ class CollaboratorController extends Controller
         // TODO: Get all relationships
         $users = User::where('is_active', '=', true)
             ->where('id', '!=', 1)
+            ->with('identificationTypes')
             ->with('collaborators.company')
             ->with('collaborators.area')
             ->with('collaborators.jobTitle')
             ->with('collaborators.location')
             ->get();
+    
 
         return view('AccessControl.Collaborators.index', [
             'users' => $users,

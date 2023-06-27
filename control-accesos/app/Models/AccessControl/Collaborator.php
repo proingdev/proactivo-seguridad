@@ -45,4 +45,9 @@ class Collaborator extends Model
     {
         return $this->belongsTo(Location::class);
     }
+
+    public function identificationType()
+    {
+        return $this->belongsTo(IdentificationType::class);
+    }
 }

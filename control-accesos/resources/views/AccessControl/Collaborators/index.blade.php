@@ -48,9 +48,8 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col"></th>
-                            <th scope="col">
-                                Colaborador
-                            </th>
+                            <th scope="col">Colaborador</th>
+                            <th scope="col">Empresa</th>
                             <th scope="col">Área</th>
                             <th scope="col">Cargo</th>
                             <th scope="col">Ubicación</th>
@@ -69,7 +68,10 @@
                                 <div class="card-title">
                                     {{ strtoupper($user->name) }} {{ strtoupper($user->last_name) }}
                                 </div>
-                                {{ $user->identification_type }} {{ $user->identification }}
+                                {{ $user->identificationTypes->initials }} {{ $user->identification }}
+                            </td>
+                            <td>
+                                {{ $user->collaborators->company->name  }}
                             </td>
                             <td>
                                 {{ $user->collaborators->area->name }}
