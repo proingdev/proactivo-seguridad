@@ -63,22 +63,22 @@
                         <tr>
                             <th scope="row"> 1 </th>
                             <td>
-                                <img src="{{ asset('images/daniel_muelas.jpg') }}" alt="" srcset="">
+                                <img src="{{ asset($user->photo_path) }}">
                             </td>
                             <td>
                                 <div class="card-title">
-                                    {{__('DANIEL ALEXANDER MUELAS RIVERA')}}
+                                    {{ strtoupper($user->name) }} {{ strtoupper($user->last_name) }}
                                 </div>
-                                {{__('CC.')}} {{__('1144097956')}}
+                                {{ $user->identification_type }} {{ $user->identification }}
                             </td>
                             <td>
-                                {{__('Sistemas de información')}}
+                                {{ $user->collaborators->area->name }}
                             </td>
                             <td>
-                                {{__('Coordinador de TI')}}
+                                {{ $user->collaborators->jobTitle->name }}
                             </td>
                             <td>
-                                {{__('Edificio antiguo')}}
+                                {{$user->collaborators->location->name}}
                             </td>
                             <td>
                                 <a href="" class="btn btn-primary">

@@ -10,6 +10,7 @@ class IdentificationType extends Model
     use HasFactory;
 
     protected $fillable = [
+        'initials',
         'name',
         'is_active',
         'created_by',

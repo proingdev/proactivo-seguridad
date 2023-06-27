@@ -19,7 +19,7 @@ class Collaborator extends Model
     ];
 
     /**
-     * Get the user that owns the phone.
+     * Get the user that owns the collaborator.
      */
     public function users()
     {

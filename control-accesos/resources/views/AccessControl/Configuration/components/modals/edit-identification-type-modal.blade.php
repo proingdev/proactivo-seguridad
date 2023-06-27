@@ -10,6 +10,17 @@
                 @csrf
                 @method('PATCH')
                 <div class="row">
+
+                    <div class="col-auto">
+                        <label for="initials" class="form-label fw-bold"> Sigla: <small
+                                class="required">*</small></label>
+                        <input type="text" class="form-control" id="initials" name="initials" placeholder="Sigla"
+                            required>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ __('La sigla de la identificación es requerida') }}</strong>
+                        </span>
+                    </div>
+
                     <div class="col-auto">
                         <label for="name" class="form-label fw-bold"> Tipo de identificación: <small
                                 class="required">*</small></label>

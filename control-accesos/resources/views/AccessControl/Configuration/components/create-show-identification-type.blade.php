@@ -2,6 +2,15 @@
 <h5 class="card-title mb-3"> {{__('Crear tipos de identificación')}} </h5> 
 <form class="row needs-validation" action="{{ route('tipo-indentificaciones.store') }}" method="POST" novalidate>
     @csrf
+    
+    <div class="col-auto">
+        <label for="initials" class="form-label fw-bold"> Sigla: <small class="required">*</small></label>
+        <input type="text" class="form-control" id="initials" name="initials" placeholder="Sigla" required>
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ __('La sigla de la identificación es requerida') }}</strong>
+        </span>
+    </div>
+
     <div class="col-auto">
         <label for="name" class="form-label fw-bold"> Tipo de identificación: <small class="required">*</small></label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Tipo de identificación" required>
@@ -10,22 +19,12 @@
         </span>
     </div>
 
+
     <div class="col-auto d-flex align-items-end">
         <button type="submit" class="btn btn-primary">Crear Tipo de identificación</button>
     </div>
 </form>
 
-@if (session('success'))
-<div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-    {{ session('success') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@elseif(session('error'))
-<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
-    {{ session('error') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@endif
 <hr>
 
 <div class="table-responsive p-2">
@@ -33,6 +32,7 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Sigla</th>
                 <th scope="col">Tipo de indentificación</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -43,6 +43,7 @@
 
             <tr>
                 <th scope="row"> {{ $key + 1 }} </th>
+                <td> {{ $identificationType->initials }} </td>
                 <td> {{ $identificationType->name }}</td>
                 <td>
                     <div class="row">
@@ -50,7 +51,9 @@
                             <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#modalUpdateIdentificationType" 
                                 data-bs-identification-type-id="{{ $identificationType->id }}"
-                                data-bs-identification-type-name="{{ $identificationType->name }}">
+                                data-bs-identification-type-initials="{{ $identificationType->initials }}"
+                                data-bs-identification-type-name="{{ $identificationType->name }}"
+                                >
                                 <i class="bi bi-pencil-fill"></i>
                                 {{ __('Editar') }}
                             </a>

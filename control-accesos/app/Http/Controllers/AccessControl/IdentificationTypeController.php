@@ -17,6 +17,7 @@ class IdentificationTypeController extends Controller
         $data = $request->all();
 
         $identificationTypeCreated = IdentificationType::create([
+            'initials' => $data['initials'],
             'name' => $data['name'],
             'created_by' => auth()->user()->id,
         ]);
@@ -39,6 +40,7 @@ class IdentificationTypeController extends Controller
         $identificationTypeToUpdate = IdentificationType::find($identificationType);
         $data = $request->all();
 
+        $identificationTypeToUpdate->initials = $data['initials'];
         $identificationTypeToUpdate->name = $data['name'];
         $identificationTypeToUpdate->updated_by = auth()->user()->id;
 
