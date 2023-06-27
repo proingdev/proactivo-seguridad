@@ -39,7 +39,9 @@
                                 Colaborador
                             </label>
                         </h2>
-                        <h3>Cargo</h3>
+                        <h3>
+                            <label id="job_title_label"> Cargo </label> 
+                        </h3>
 
                         <div class="mt-2">
                             
