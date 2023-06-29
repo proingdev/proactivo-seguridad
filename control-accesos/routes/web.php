@@ -39,6 +39,14 @@ Route::resource('colaboradores', 'App\Http\Controllers\AccessControl\Collaborato
 Route::resource('visitantes', 'App\Http\Controllers\AccessControl\VisitorController')
     ->middleware('auth');
 
+//createVisitorToColabollator
+Route::get('/registrar-visitante', 
+    [
+        App\Http\Controllers\AccessControl\VisitorController::class, 
+        'createVisitorToColabollator'
+    ])->name('registrar-visitante')
+    ->middleware('auth');
+
 /**
  * Configuration
  */
@@ -59,8 +67,10 @@ Route::resource('cargos', 'App\Http\Controllers\AccessControl\JobTitleController
 Route::resource('ubicaciones', 'App\Http\Controllers\AccessControl\LocationController')
     ->middleware('auth');
 
+//Identifications
 Route::resource('tipo-indentificaciones', 'App\Http\Controllers\AccessControl\IdentificationTypeController')
     ->middleware('auth');
 
+//arls
 Route::resource('arls', 'App\Http\Controllers\AccessControl\ArlController')
     ->middleware('auth');

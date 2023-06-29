@@ -64,4 +64,13 @@ class VisitorController extends Controller
     {
         //
     }
+
+    /**
+     * See the view to add a visitor to a specific collaborator
+     * TODO: Especificar el pk del usuario
+     */
+    public function createVisitorToColabollator(){
+
+        return view('AccessControl.Visitors.create');
+    }
 }

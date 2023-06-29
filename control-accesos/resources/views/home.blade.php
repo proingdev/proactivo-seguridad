@@ -176,7 +176,7 @@
                             <hr>
                             <div class="d-flex justify-content-center">
 
-                                <a href="" class="dashboard-user-action user-action-primary m-1">
+                                <a href="{{ route('registrar-visitante') }}" class="dashboard-user-action user-action-primary m-1">
                                     <div class="content-icon"> <i class="bi bi-person-fill-add"></i> </div>
                                     <div class="content-text"> {{ __('Registrar visitante') }} </div>
                                 </a>
